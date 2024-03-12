@@ -1,13 +1,12 @@
 // Import necessary modules and packages
 
 import { v4 as uuidv4 } from 'uuid';
-import RedisClient from '../utils/redis';
-import DBClient from '../utils/db';
-
-const { ObjectId } = require('mongodb');
-const fs = require('fs');
-const mime = require('mime-types');
-const Bull = require('bull');
+import { promises as fs } from 'fs';
+import { ObjectID } from 'mongodb';
+import mime from 'mime-types';
+import Queue from 'bull';
+import dbClient from '../utils/db';
+import redisClient from '../utils/redis';
 
 // Define the FilesController class
 class FilesController {
